@@ -7,7 +7,7 @@ const words = new Words().words;
 const seedrandom = require('seedrandom');
 const { createCanvas, loadImage } = require('canvas')
 
-server.listen(8000);
+server.listen(process.env.PORT || 3000);
 process.stdout.write('\033c') //Clear console
 console.log("Server started");
 
