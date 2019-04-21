@@ -132,10 +132,12 @@ app.get("/", function(req, res) {
 	let id = req.query.id;
 	if (!id) id = createId();
 
+	res.send("hi");
+
 	generateMeme(res, id);
 });
 
-app.get("/id", function(req, res) {
+/*app.get("/id", function(req, res) {
 	res.sendFile(__dirname + "/index.html");
-});
+});*/
 
