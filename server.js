@@ -16,7 +16,7 @@ const images = [imgPath + '1.jpg', imgPath + '2.jpg', imgPath + '3.jpg', imgPath
 	imgPath + '6.jpg', imgPath + '7.jpg', imgPath + '8.jpg', imgPath + '9.jpg', imgPath + '10.jpg'];
 
 
-function createId(len = 64, chars = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {
+function createId(len = 6, chars = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {
 	let id = "";
 	while (len--) {
 		id += chars[Math.random() * chars.length | 0];
@@ -32,7 +32,7 @@ function generateMeme(res, id, wordCount = 8) {
 
 	//Canvas text setup
 	context.lineJoin = "round";
-	context.lineWidth = 11;
+	context.lineWidth = 7;
 
 	context.fillStyle = "#ffffff";
 	context.strokeStyle = '#000000'
@@ -129,6 +129,6 @@ app.get("/", function(req, res) {
 	let id = req.query.id;
 	if (!id) id = createId();
 
-	generateMeme(res, id);
+	res.sendFile(__dirname + "/test.html"); //generateMeme(res, id);
 });
 
