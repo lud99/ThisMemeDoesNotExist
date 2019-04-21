@@ -7,7 +7,6 @@
   },
   "dependencies": {
     "canvas": "*",
-    "cookie-parser": "*",
     "express": "*",
     "http": "*",
     "seedrandom": "*"

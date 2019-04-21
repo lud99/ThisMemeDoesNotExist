@@ -82,7 +82,7 @@ function generateMeme(res, id, wordCount = 8) {
 
 				//Send generated meme to client
 			 	console.log("Sending a meme to a client");
-			 	res.cookie("id", id);
+			 	//res.cookie("id", id);
 				res.sendFile(__dirname + "/server/memes/" + id + ".png");
 			});
 		});
