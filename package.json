@@ -2,9 +2,12 @@
   "name": "ThisMemeDoesNotExist",
   "description": "a really cool app",
   "version": "1.0.0",
-  "engines": {
-    "node": "*"
-  },
+  	"dependencies": {
+		"express": "*",
+		"canvas": "*",
+		"seedrandom": "*",
+		"http": "*"
+	},
  "scripts": {
     "start": "node server.js"
   }
