@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const app = express();
 const cookieParser = require('cookie-parser');
 const server = require('http').createServer(app);
@@ -141,3 +141,4 @@ app.get("/", function(req, res) {
 	res.sendFile(__dirname + "/index.html");
 });*/
 
+*/
