@@ -5,6 +5,12 @@
   "engines": {
     "node": "10.15.2"
   },
+  "dependencies": {
+    "canvas": "*",
+    "express": "*",
+    "http": "*",
+    "seedrandom": "*"
+  },
   "scripts": {
     "start": "node server.js"
   }
