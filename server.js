@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cookieParser = require('cookie-parser');
 const server = require('http').createServer(app);
 const fs = require("fs");
 const Words = require('./server/words.js');
@@ -81,6 +82,7 @@ function generateMeme(res, id, wordCount = 8) {
 
 				//Send generated meme to client
 			 	console.log("Sending a meme to a client");
+			 	res.cookie("id", id);
 				res.sendFile(__dirname + "/server/memes/" + id + ".png");
 			});
 		});
@@ -125,10 +127,15 @@ function generateMeme(res, id, wordCount = 8) {
 	}
 }
 
+
 app.get("/", function(req, res) {
 	let id = req.query.id;
 	if (!id) id = createId();
 
-	res.sendFile(__dirname + "/test.html"); //generateMeme(res, id);
+	generateMeme(res, id);
+});
+
+app.get("/id", function(req, res) {
+	res.sendFile(__dirname + "/index.html");
 });
 
