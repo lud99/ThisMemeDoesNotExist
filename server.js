@@ -150,3 +150,4 @@ app.get("/", function(req, res) {
 app.get("/id", function(req, res) {
 	res.sendFile(__dirname + "/index.html");
 });
+*/
