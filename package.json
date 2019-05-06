@@ -2,6 +2,10 @@
   "name": "ThisMemeDoesNotExist",
   "description": "A bad random meme generator",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.x"
+  },
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
