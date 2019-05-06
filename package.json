@@ -1,11 +1,13 @@
 {
   "name": "ThisMemeDoesNotExist",
-  "description": "a really cool app",
+  "description": "A bad random meme generator",
   "version": "1.0.0",
-  "engines": {
-    "node": "10.15.2"
-  },
   "scripts": {
     "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "*",
+    "http": "*",
+    "seedrandom": "*"
   }
 }

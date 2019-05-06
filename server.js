@@ -1,3 +1,15 @@
+const http = require("http");
+
+const server = http.createServer(function (req, res) {
+	res.end("Hello!");
+})
+
+server.listen(80, (err) => {
+	if ( ! err) {
+		console.log(`server is listening on 80`)
+	}
+})
+
 /*const express = require('express');
 const app = express();
 const cookieParser = require('cookie-parser');
@@ -6,9 +18,9 @@ const fs = require("fs");
 const Words = require('./server/words.js');
 const words = new Words().words;
 const seedrandom = require('seedrandom');
-const { createCanvas, loadImage } = require('canvas')
+const { createCanvas, loadImage } = require('canvas-prebuilt')
 
-server.listen(process.env.PORT || 3000);
+server.listen(process.env.PORT || 80);
 process.stdout.write('\033c') //Clear console
 console.log("Server started");
 
@@ -82,7 +94,7 @@ function generateMeme(res, id, wordCount = 8) {
 
 				//Send generated meme to client
 			 	console.log("Sending a meme to a client");
-			 	//res.cookie("id", id);
+			 	res.cookie("id", id);
 				res.sendFile(__dirname + "/server/memes/" + id + ".png");
 			});
 		});
@@ -132,13 +144,9 @@ app.get("/", function(req, res) {
 	let id = req.query.id;
 	if (!id) id = createId();
 
-	res.send("hi");
-
 	generateMeme(res, id);
 });
 
-/*app.get("/id", function(req, res) {
+app.get("/id", function(req, res) {
 	res.sendFile(__dirname + "/index.html");
-});*/
-
-*/
+});
